@@ -1,0 +1,538 @@
+{
+  "luis_schema_version": "7.0.0",
+  "intents": [
+    {
+      "name": "Myaccount_Update_Address",
+      "features": []
+    },
+    {
+      "name": "Myaccount_Update_DateOfBirth",
+      "features": [
+        {
+          "modelName": "DateOfBirth",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "Myaccount_Update_MobileNumber",
+      "features": [
+        {
+          "featureName": "ContactType",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "Myaccount_Update_Name",
+      "features": [
+        {
+          "modelName": "NameType",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "None",
+      "features": []
+    },
+    {
+      "name": "Offer_Unable_To_Redeem",
+      "features": []
+    },
+    {
+      "name": "TCP_Loyality_Points",
+      "features": []
+    }
+  ],
+  "entities": [
+    {
+      "name": "Contact",
+      "children": [
+        {
+          "name": "ContactType",
+          "children": [],
+          "features": [
+            {
+              "featureName": "ContactType",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "PhoneNumber",
+          "children": [],
+          "features": []
+        }
+      ],
+      "roles": [],
+      "features": []
+    }
+  ],
+  "hierarchicals": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "BrandType",
+      "subLists": [
+        {
+          "canonicalForm": "Big Basket",
+          "list": [
+            "BB",
+            "big bask."
+          ]
+        },
+        {
+          "canonicalForm": " IHCL",
+          "list": []
+        },
+        {
+          "canonicalForm": "Cliq",
+          "list": [
+            "tata cliq",
+            "click"
+          ]
+        },
+        {
+          "canonicalForm": "croma",
+          "list": [
+            "tata croma"
+          ]
+        },
+        {
+          "canonicalForm": "air asia",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "DateOfBirth",
+      "subLists": [
+        {
+          "canonicalForm": "birthdate",
+          "list": []
+        },
+        {
+          "canonicalForm": "Date of birth",
+          "list": [
+            "dob"
+          ]
+        },
+        {
+          "canonicalForm": "Account date of birth",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "NameType",
+      "subLists": [
+        {
+          "canonicalForm": "Profile name",
+          "list": []
+        },
+        {
+          "canonicalForm": "primary name",
+          "list": []
+        },
+        {
+          "canonicalForm": "name",
+          "list": []
+        },
+        {
+          "canonicalForm": "user name",
+          "list": [
+            "username"
+          ]
+        },
+        {
+          "canonicalForm": "account name",
+          "list": []
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    },
+    {
+      "name": "personName",
+      "roles": []
+    }
+  ],
+  "utterances": [
+    {
+      "text": "can’t redeem offer online",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "change address",
+      "intent": "Myaccount_Update_Address",
+      "entities": []
+    },
+    {
+      "text": "change my date of birth to 13/07/1995",
+      "intent": "Myaccount_Update_DateOfBirth",
+      "entities": []
+    },
+    {
+      "text": "change my mobile number to 8802545566",
+      "intent": "Myaccount_Update_MobileNumber",
+      "entities": [
+        {
+          "entity": "Contact",
+          "startPos": 10,
+          "endPos": 22,
+          "children": [
+            {
+              "entity": "ContactType",
+              "startPos": 10,
+              "endPos": 22,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "change my name from laxmi to laksmi",
+      "intent": "Myaccount_Update_Name",
+      "entities": []
+    },
+    {
+      "text": "change my name to john",
+      "intent": "Myaccount_Update_Name",
+      "entities": []
+    },
+    {
+      "text": "help me to change my contact number",
+      "intent": "Myaccount_Update_MobileNumber",
+      "entities": [
+        {
+          "entity": "Contact",
+          "startPos": 21,
+          "endPos": 34,
+          "children": [
+            {
+              "entity": "ContactType",
+              "startPos": 21,
+              "endPos": 34,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i am getting error while applying offer",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "i am not able to use the deal on my purchase",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "i am unable to redeem offer",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "i am unable to redeem offer at store",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "i am unable to redeem the coupon for my purchase",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "i am unable to use offer on your site",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "i can't see points earned in my account for my last transaction at croma store",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i cant see loyalty points in my account for my transaction",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i did a transaction for cliq but points have not been credited in my account for the same",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i did a transaction of inr 10,000 and was supposed to earn 100 points but got only 60 points",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i did a transaction, but points have not been credited in my account for the same",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i did not earn points",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i did not receive loyalty points for my transaction",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i earned less than expected",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i feel that there is discrepancy in my loyalty points, why is it so?",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i got less points",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i have less earning points",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i purchased a product online and i did not receive loyalty point for this transaction",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i should have got more points. why i received less points",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i think less points have been credited to my account",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "i want change my address",
+      "intent": "Myaccount_Update_Address",
+      "entities": []
+    },
+    {
+      "text": "i want to change my date of birth",
+      "intent": "Myaccount_Update_DateOfBirth",
+      "entities": []
+    },
+    {
+      "text": "i want to update my account address",
+      "intent": "Myaccount_Update_Address",
+      "entities": []
+    },
+    {
+      "text": "i want to update my contact number",
+      "intent": "Myaccount_Update_MobileNumber",
+      "entities": [
+        {
+          "entity": "Contact",
+          "startPos": 20,
+          "endPos": 33,
+          "children": [
+            {
+              "entity": "ContactType",
+              "startPos": 20,
+              "endPos": 33,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i want to update my mobile number",
+      "intent": "Myaccount_Update_MobileNumber",
+      "entities": [
+        {
+          "entity": "Contact",
+          "startPos": 20,
+          "endPos": 32,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want to update my phone number to 9980123456",
+      "intent": "Myaccount_Update_MobileNumber",
+      "entities": [
+        {
+          "entity": "Contact",
+          "startPos": 20,
+          "endPos": 31,
+          "children": [
+            {
+              "entity": "ContactType",
+              "startPos": 20,
+              "endPos": 31,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i want to update my username",
+      "intent": "Myaccount_Update_Name",
+      "entities": []
+    },
+    {
+      "text": "kindly change my primary address",
+      "intent": "Myaccount_Update_Address",
+      "entities": []
+    },
+    {
+      "text": "loyalty points are missing from my account",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "my loyality points are missing",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "my points are missing",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "my points is not credited for big basket",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "my reward points have not been credited to my account",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "not able to view my missing points",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "offer is not getting applied to my purchase",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "sorry",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "store is not accepting the offer that i have",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "there are some loyalty points missing from my account",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "update my address",
+      "intent": "Myaccount_Update_Address",
+      "entities": []
+    },
+    {
+      "text": "update my date of birth to 15th june 1997",
+      "intent": "Myaccount_Update_DateOfBirth",
+      "entities": []
+    },
+    {
+      "text": "update my dob",
+      "intent": "Myaccount_Update_DateOfBirth",
+      "entities": []
+    },
+    {
+      "text": "update my name",
+      "intent": "Myaccount_Update_Name",
+      "entities": []
+    },
+    {
+      "text": "update my profile name",
+      "intent": "Myaccount_Update_Name",
+      "entities": []
+    },
+    {
+      "text": "update residential address",
+      "intent": "Myaccount_Update_Address",
+      "entities": []
+    },
+    {
+      "text": "you guys did not give me reward points for my transaction",
+      "intent": "TCP_Loyality_Points",
+      "entities": []
+    },
+    {
+      "text": "your system is not accepting the coupon",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    },
+    {
+      "text": "your system shows offer is invalid",
+      "intent": "Offer_Unable_To_Redeem",
+      "entities": []
+    }
+  ],
+  "versionId": "0.1",
+  "name": "Skill_TCP",
+  "desc": "For the common used features for tcpr",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "patternAnyEntities": [],
+  "regex_entities": [
+    {
+      "name": "ContactNumber",
+      "regexPattern": "[0-9]{10}",
+      "roles": []
+    },
+    {
+      "name": "otp",
+      "regexPattern": "[0-9]{6}",
+      "roles": []
+    },
+    {
+      "name": "ProductID",
+      "regexPattern": "[0-9]{7}",
+      "roles": []
+    }
+  ],
+  "phraselists": [
+    {
+      "name": "ContactType",
+      "mode": true,
+      "words": "Phone number,contact number,number,cell number,primary number",
+      "activated": true,
+      "enabledForAllModels": false
+    }
+  ],
+  "regex_features": [],
+  "patterns": [],
+  "settings": []
+}
